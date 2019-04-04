@@ -11,7 +11,8 @@ class App extends Component {
     super();
 
     this.state = {
-      posts: []
+      posts: [],
+      
     };
 
     this.updatePost = this.updatePost.bind( this );
@@ -65,7 +66,8 @@ class App extends Component {
           <Compose 
           createPostFn={this.createPost}/>
           <Search
-          searchPostFn={this.searchPost} />
+          searchPostFn={this.searchPost} 
+          posts ={this.posts}/>
           {
             posts.map( post => (
               <Post key={post.id} 

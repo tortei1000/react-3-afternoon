@@ -11,22 +11,28 @@ export default class Search extends Component {
     super();
     
     this.state = {
-      text: ''
+      filterText: '',
+     // posts : props.posts
     };
 
-    this.searchPost = this.searchPost.bind( this );
+    
   }
   
   
-  searchPost() {
-    const {text} = this.state
-    const {searchPostFn} = this.props
-    searchPostFn(text);
-    //this.setState({text :""})
-    console.log(text)
-  }
+  // searchPostFn(text){
+  //   let newArr = posts    
+  //   .filter((element, index) => {
+  //     return element.includes(this.state.text);
+  //   })
+    
+  //};
   
+  // handleChange(value){
+  //   this.setState({filterText:value})
+    
+  // }
   render() {
+    
     return (
       <section className="Search__parent">
 
