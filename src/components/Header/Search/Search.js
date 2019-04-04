@@ -12,34 +12,32 @@ export default class Search extends Component {
     
     this.state = {
       filterText: '',
-     // posts : props.posts
+     
     };
 
-    
+  this.searchPostFn = this.searchPostFn.bind(this)  
   }
   
   
-  // searchPostFn(text){
-  //   let newArr = posts    
-  //   .filter((element, index) => {
-  //     return element.includes(this.state.text);
-  //   })
+  searchPostFn(){
+      
+    this.props.searchPostFn(this.state.filterText)
     
-  //};
+  };
   
-  // handleChange(value){
-  //   this.setState({filterText:value})
+  handleChange(e){
+    this.setState({filterText:e.target.value})
     
-  // }
+   }
   render() {
     
     return (
       <section className="Search__parent">
 
         <div className="Search__content">
-          <input placeholder="Search Your Feed" />
+          <input onChange={(e)=>this.handleChange(e)} placeholder="Search Your Feed" />
 
-          <SearchIcon id="Search__icon" />
+          <SearchIcon onClick={this.searchPostFn} id="Search__icon" />
         </div>
         
       </section>
